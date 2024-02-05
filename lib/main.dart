@@ -1,7 +1,7 @@
 //this page redirects to home page, i.e, med_rem_page
 
 import 'package:flutter/material.dart';
-import 'package:medifys_app/pages/med_rem_page.dart';
+import 'package:medifys_app/pages/med_rem/med_rem_page.dart';
 
 void main(){
   runApp(const MyApp());
