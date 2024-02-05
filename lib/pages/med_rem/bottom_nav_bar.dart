@@ -4,7 +4,7 @@ import 'package:medifys_app/pages/gemini_chatbot/gemini_bot.dart';
 import 'package:medifys_app/pages/shop/shop_page.dart';
 
 class BottomNavBar extends StatefulWidget {
-  final int selectedIndex;    // creating fns
+  final int selectedIndex; // creating fns
   final Function(int) onItemTap;
 
   BottomNavBar({
@@ -17,13 +17,18 @@ class BottomNavBar extends StatefulWidget {
   State<BottomNavBar> createState() => _BottomNavBarState();
 }
 
-class _BottomNavBarState extends State<BottomNavBar>{
-  @override
+class _BottomNavBarState extends State<BottomNavBar> {
+  // Creating instances of your pages
+  final DocRecPage docRecPage = DocRecPage();
+  final GeminiBotPage geminiBotPage = GeminiBotPage();
+  final ShopPage shopPage = ShopPage();
 
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      children[],
-        BottomNavigationBar(
+
+      bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.tab),
@@ -38,34 +43,30 @@ class _BottomNavBarState extends State<BottomNavBar>{
             label: 'Tab 3',
           ),
         ],
-      
-        currentIndex: widget.selectedIndex,   //call fn selectedIndex
+
+        currentIndex: widget.selectedIndex, // call fn selectedIndex
         onTap: (index) {
-          widget.onItemTap(index);  //call fn onItemTap
-      
-          //condition to navigate to different pages(based on index)
-          if(index==0){
+          widget.onItemTap(index); // call fn onItemTap
+
+          // condition to navigate to different pages (based on index)
+          if (index == 0) {
             Navigator.pushReplacement(
-              context, 
+              context,
               MaterialPageRoute(builder: (context) => DocRecPage()),
             );
-          }
-          else if(index==1){
+          } else if (index == 1) {
             Navigator.pushReplacement(
-              context, 
+              context,
               MaterialPageRoute(builder: (context) => GeminiBotPage()),
             );
-          }
-          else if(index==2){
+          } else if (index == 2) {
             Navigator.pushReplacement(
-              context, 
+              context,
               MaterialPageRoute(builder: (context) => ShopPage()),
             );
           }
-        }
+        },
       ),
     );
   }
 }
-
-//when you are inside the state class of a StatefulWidget, you access the properties and methods of the corresponding widget using 'widget.' followed by the property or method name.
