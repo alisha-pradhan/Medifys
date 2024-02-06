@@ -87,7 +87,10 @@ class _MedRemState extends State<MedRemPage> {
           Expanded(
             //to navigate thru the bottom nav bar
             child: _pages[_selectedIndex], //call List
+          ),
 
+          Expanded(
+            child: GridView(),
           ),
         ],
       ),
