@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 
 class ShopPage extends StatelessWidget {
-  const ShopPage({Key? key}) : super(key: key);
+  const ShopPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // Your widget contents go here
+      body: Center(
+        child: Text("Shop Page"),
+      ),
     );
   }
 }

@@ -1,8 +1,11 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
 import 'package:medifys_app/assets/colors/colors.dart';
+import 'package:medifys_app/pages/doc_rec/doc_rec_page.dart';
+import 'package:medifys_app/pages/gemini_chatbot/gemini_bot.dart';
 import 'package:medifys_app/pages/med_rem/profile_dialog.dart';
+import 'package:medifys_app/pages/shop/shop_page.dart';
 
 
 class MedRemPage extends StatefulWidget {
@@ -14,6 +17,28 @@ class MedRemPage extends StatefulWidget {
 
 class _MedRemState extends State<MedRemPage> {
 
+  //method to update the selected index
+  void _navigateBottomBar(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
+  void createNewMed(){}
+
+  //this keeps track of the selected page index
+  int _selectedIndex =0;
+
+  //page list for navigating in Bottom Nav Bar
+  final List _pages= [
+    DocRecPage(),    //doc rec page
+    GeminiBotPage(),    //chatbot page
+    ShopPage(),    //shop page
+
+  ];
+
+  //------------------------------------------------------------------------------------------------------------------------
+
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
@@ -24,6 +49,7 @@ class _MedRemState extends State<MedRemPage> {
           children: [
             IconButton(
               icon: Icon(Icons.home),
+              color:AppColors.whiteColor,
                 onPressed: () {
                   // Redirect to MedRem
                   Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => MedRemPage()));
@@ -39,11 +65,10 @@ class _MedRemState extends State<MedRemPage> {
               ),
             ],
           ),
-
-          
           actions: [
             IconButton(
-              icon: Icon(Icons.settings),
+              icon: Icon(Icons.account_circle),
+              color:AppColors.whiteColor,
               onPressed: () {
               // Show the ProfileDialog
                 showDialog(
@@ -57,8 +82,47 @@ class _MedRemState extends State<MedRemPage> {
           ],
       ),
 
-    //bottom nav bar
-    
+      body: ListView(
+        children: [
+          Expanded(
+            //to navigate thru the bottom nav bar
+            child: _pages[_selectedIndex], //call List
+
+          ),
+        ],
+      ),
+
+      //bottom navigation bar
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _selectedIndex, //setting index on tap
+        onTap: _navigateBottomBar,  //on tap call fn _navigateBottomBar
+        backgroundColor: AppColors.blueColor,
+        selectedItemColor: AppColors.whiteColor, // Color for the selected item
+        unselectedItemColor: AppColors.greyColor, // Color for unselected items
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.contacts_rounded),
+            label: 'Doctor'
+            ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.assistant_rounded),
+            label: 'Assistant'
+            ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.shopping_bag_rounded),
+            label: 'Shop'
+            ),
+        ],
+      ),
+
+      //button
+      floatingActionButton: FloatingActionButton(
+        onPressed: createNewMed , //calling fn createNewMed
+        child: Icon(Icons.add_rounded),
+        backgroundColor: AppColors.blueColor,
+      ),
+
+
 
     );
   }

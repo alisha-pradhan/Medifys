@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 
 class DocRecPage extends StatelessWidget {
-  const DocRecPage({Key? key}) : super(key: key);
+  const DocRecPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // Your widget contents go here
+      body: Center(
+        child: Text("Doc Rec Page"),
+      ),
     );
   }
 }
