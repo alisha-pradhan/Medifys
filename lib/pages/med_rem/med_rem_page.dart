@@ -82,7 +82,7 @@ class _MedRemState extends State<MedRemPage> {
           ],
       ),
 
-      body: ListView(
+      body: Column(
         children: [
           Expanded(
             //to navigate thru the bottom nav bar
@@ -90,7 +90,14 @@ class _MedRemState extends State<MedRemPage> {
           ),
 
           Expanded(
-            child: GridView(),
+            child: GridView.builder(
+              itemCount: 64,
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3), //how many in each row
+              itemBuilder:(context, index) => Container(
+                color: Colors.deepPurple,
+                margin: EdgeInsets.all(3),
+              ),
+            ),
           ),
         ],
       ),
