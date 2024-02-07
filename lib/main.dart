@@ -1,4 +1,5 @@
 //this page redirects to home page, i.e, med_rem_page
+//main entry point of the app
 
 import 'package:flutter/material.dart';
 import 'package:medifys_app/pages/med_rem/med_rem_page.dart';
