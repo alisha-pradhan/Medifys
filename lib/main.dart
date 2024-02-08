@@ -2,7 +2,7 @@
 //main entry point of the app
 
 import 'package:flutter/material.dart';
-import 'package:medifys_app/pages/med_rem/med_rem_page.dart';
+import 'package:medifys_app/pages/base_page.dart';
 
 void main(){
   runApp(const MyApp());
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
     
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MedRemPage(), //redirects to MedRemPage
+      home: BasePage(), //redirects to MedRemPage
     );
   }
 }
