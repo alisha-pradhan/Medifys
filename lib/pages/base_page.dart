@@ -8,7 +8,7 @@ import 'package:medifys_app/assets/colors/colors.dart';
 import 'package:medifys_app/pages/med_rem/med_rem_page.dart';
 import 'package:medifys_app/pages/doc_rec/doc_rec_page.dart';
 import 'package:medifys_app/pages/gemini_chatbot/gemini_bot.dart';
-import 'package:medifys_app/pages/med_rem/profile_dialog.dart';
+import 'package:medifys_app/pages/util/profile_dialogue/profile_dialog.dart';
 import 'package:medifys_app/pages/shop/shop_page.dart';
 
 
@@ -79,9 +79,7 @@ class _BaseState extends State<BasePage> {
               // Show the ProfileDialog
                 showDialog(
                   context: context,
-                  builder: (BuildContext context) {
-                    return ProfileDialog();
-                  },
+                  builder: (context) => ProfileDialog(),
                 );
               },
             ) ,

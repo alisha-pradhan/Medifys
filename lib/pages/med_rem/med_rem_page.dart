@@ -144,41 +144,7 @@ class _MedRemState extends State<MedRemPage> {
       ),
 
 
-      // itemBuilder:(context, index) => Container(
-      //   color: Colors.deepPurple,
-      //   margin: EdgeInsets.all(5),
-      // ),
-
-
-      // //bottom navigation bar
-      // bottomNavigationBar: BottomNavigationBar(
-      //   currentIndex: _selectedIndex, //setting index on tap
-      //   onTap: _navigateBottomBar,  //on tap call fn _navigateBottomBar
-      //   backgroundColor: AppColors.blueColor,
-      //   selectedItemColor: AppColors.whiteColor, // Color for the selected item
-      //   unselectedItemColor: AppColors.greyColor, // Color for unselected items
-      //   items: [
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.contacts_rounded),
-      //       label: 'Doctor'
-      //       ),
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.assistant_rounded),
-      //       label: 'Assistant'
-      //       ),
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.shopping_bag_rounded),
-      //       label: 'Shop'
-      //       ),
-      //   ],
-      // ),
-
-      //button
-      // floatingActionButton: FloatingActionButton(
-      //   onPressed: createNewMed , //calling fn createNewMed
-      //   child: Icon(Icons.add_rounded),
-      //   backgroundColor: AppColors.blueColor,
-      // ),
+    
 
           floatingActionButton:FloatingActionButton(
             onPressed: addTile,
