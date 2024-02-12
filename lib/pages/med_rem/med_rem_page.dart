@@ -67,44 +67,7 @@ class _MedRemState extends State<MedRemPage> {
     return  Scaffold(
       backgroundColor: AppColors.whiteColor,
 
-      // appBar: AppBar(
-      //   backgroundColor: AppColors.blueColor,
-      //   title: Row(
-      //     children: [
-      //       IconButton(
-      //         icon: Icon(Icons.home),
-      //         color:AppColors.whiteColor,
-      //           onPressed: () {
-      //             // Redirect to MedRem
-      //             Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => MedRemPage()));
-      //           },
-      //       ),
-      //       Text(
-      //         'Medifys',
-      //         style: TextStyle(
-      //           fontWeight: FontWeight.bold,
-      //             fontSize: 25.0,
-      //             color: AppColors.whiteColor,
-      //           ),
-      //         ),
-      //       ],
-      //     ),
-      //     actions: [
-      //       IconButton(
-      //         icon: Icon(Icons.account_circle),
-      //         color:AppColors.whiteColor,
-      //         onPressed: () {
-      //         // Show the ProfileDialog
-      //           showDialog(
-      //             context: context,
-      //             builder: (BuildContext context) {
-      //               return ProfileDialog();
-      //             },
-      //           );
-      //         },
-      //       ) ,
-      //     ],
-      // ),
+    
 
     body: Column(
         children: [
