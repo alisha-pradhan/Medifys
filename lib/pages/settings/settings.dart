@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-        primaryColor: Colors.blue,
-        // accentColor: Colors.white,
-        scaffoldBackgroundColor: Colors.white,
-      ),
-      home: SettingsPage(),
-    );
-  }
-}
+// class MyApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       theme: ThemeData(
+//         primaryColor: Colors.blue,
+//         // accentColor: Colors.white,
+//         scaffoldBackgroundColor: Colors.white,
+//       ),
+//       home: SettingsPage(),
+//     );
+//   }
+// }
 
 class SettingsPage extends StatefulWidget {
   @override
@@ -29,13 +29,15 @@ class _SettingsPageState extends State<SettingsPage> {
       appBar: AppBar(
         backgroundColor: Colors.blue,
         title: const Text(
-          'Setting',
+          'Settings',
           style: TextStyle(
             fontSize: 22,
           ),
         ),
         leading: IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pop(context);
+            },
             icon: const Icon(
               Icons.arrow_back,
               color: Colors.white,
@@ -87,6 +89,14 @@ class _SettingsPageState extends State<SettingsPage> {
           ),
           Divider(),
           ListTile(
+            title: Text('Accessibility'),
+            leading: Icon(Icons.accessibility),
+            onTap: () {
+              // Navigate to accessibilty
+            },
+          ),
+          Divider(),
+          ListTile(
             title: Text('About'),
             leading: Icon(Icons.info),
             onTap: () {
@@ -119,6 +129,7 @@ class _SettingsPageState extends State<SettingsPage> {
               // Navigate to about page
             },
           ),
+
           Row(
             children: [
               Expanded(

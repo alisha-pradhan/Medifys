@@ -6,8 +6,8 @@ import 'package:syncfusion_flutter_charts/charts.dart';
 //   runApp(const MyApp());
 // }
 
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key});
+class AnalyticsPage extends StatelessWidget {
+  const AnalyticsPage({super.key});
 
   @override
   Widget build(BuildContext context) {

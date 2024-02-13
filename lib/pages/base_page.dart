@@ -10,6 +10,9 @@ import 'package:medifys_app/pages/doc_rec/doc_rec_page.dart';
 import 'package:medifys_app/pages/gemini_chatbot/gemini_bot.dart';
 import 'package:medifys_app/pages/util/profile_dialogue/profile_dialog.dart';
 import 'package:medifys_app/pages/shop/shop_page.dart';
+import 'package:medifys_app/pages/analytics/analyticsPage.dart';
+import 'package:medifys_app/pages/settings/settings.dart';
+import 'package:medifys_app/pages/gemini_chatbot/geminI/chat_page.dart';
 
 
 class BasePage extends StatefulWidget {
@@ -37,8 +40,8 @@ class _BaseState extends State<BasePage> {
   final List _pages= [
     MedRemPage(),   //med rem page
     DocRecPage(),    //doc rec page
-    GeminiBotPage(),    //chatbot page
-    ShopPage(),    //shop page
+    ChatPage(),    //chatbot page
+    SettingsPage(),    //shop page
 
   ];
 

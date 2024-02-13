@@ -3,8 +3,12 @@
 
 import 'package:flutter/material.dart';
 import 'package:medifys_app/assets/colors/colors.dart';
+import 'package:medifys_app/pages/analytics/analyticsPage.dart';
+import 'package:medifys_app/pages/settings/settings.dart';
 import 'package:popover/popover.dart';
 import 'package:medifys_app/pages/util/profile_dialogue/popover_button.dart';
+import 'package:medifys_app/pages/settings/settings.dart';
+import 'package:medifys_app/pages/analytics/analyticsPage.dart';
 
 
 class ProfileDialog extends StatelessWidget{
@@ -106,91 +110,110 @@ class ProfileDialog extends StatelessWidget{
                   //elements container, sizedbox, row used explicitily
               
                   //analytics
-                  Container(       //container to give it hight and color
-                    height: 50,
-                    color: AppColors.whiteColor,
-                    child: SizedBox(         //sizedbox for containing Row
-                      child: Row(            //Row to contained elements side by side
-                        children: [
-                          //icon
-                          Padding(
-                            padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-                            child: Icon(
-                              Icons.auto_graph_rounded,
-                              size: 30,
-                              color: AppColors.blueColor,
+                  MaterialButton(
+                     onPressed: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => AnalyticsPage()),
+                      );
+                    },
+                    child: Container(       //container to give it hight and color
+                      height: 50,
+                      color: AppColors.whiteColor,
+                      child: SizedBox(         //sizedbox for containing Row
+                        child: Row(            //Row to contained elements side by side
+                          children: [
+                            //icon
+                            Padding(
+                              padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+                              child: Icon(
+                                Icons.auto_graph_rounded,
+                                size: 30,
+                                color: AppColors.blueColor,
+                              ),
                             ),
-                          ),
-                          Text(
-                            'Analytics',
-                            style: TextStyle(
-                              fontSize: 16.0,
-                              fontWeight: FontWeight.bold,
-                              color: AppColors.blackColor,
-                            ),
-                          )
-                          
-                        ],
+                            Text(
+                              'Analytics',
+                              style: TextStyle(
+                                fontSize: 16.0,
+                                fontWeight: FontWeight.bold,
+                                color: AppColors.blackColor,
+                              ),
+                            )
+                            
+                          ],
+                        ),
                       ),
                     ),
                   ),
 
                   //Settings
-                  Container(       //container to give it hight and color
-                    height: 50,
-                    color: AppColors.whiteColor,
-                    child: SizedBox(         //sizedbox for containing Row
-                      child: Row(            //Row to contained elements side by side
-                        children: [
-                          //icon
-                          Padding(
-                            padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-                            child: Icon(
-                              Icons.settings,
-                              size: 30,
-                              color: AppColors.blueColor,
+                  MaterialButton(
+                    onPressed: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => SettingsPage()),
+                      );
+                    },
+                    child: Container(       //container to give it hight and color
+                      height: 50,
+                      color: AppColors.whiteColor,
+                      child: SizedBox(         //sizedbox for containing Row
+                        child: Row(            //Row to contained elements side by side
+                          children: [
+                            //icon
+                            Padding(
+                              padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+                              child: Icon(
+                                Icons.settings,
+                                size: 30,
+                                color: AppColors.blueColor,
+                              ),
                             ),
-                          ),
-                          Text(
-                            'Settings',
-                            style: TextStyle(
-                              fontSize: 16.0,
-                              fontWeight: FontWeight.bold,
-                              color: AppColors.blackColor,
-                            ),
-                          )
-                          
-                        ],
+                            Text(
+                              'Settings',
+                              style: TextStyle(
+                                fontSize: 16.0,
+                                fontWeight: FontWeight.bold,
+                                color: AppColors.blackColor,
+                              ),
+                            )
+                            
+                          ],
+                        ),
                       ),
                     ),
                   ),
 
                   //Help and feedback
-                  Container(       //container to give it hight and color
-                    height: 50,
-                    color: AppColors.whiteColor,
-                    child: SizedBox(         //sizedbox for containing Row
-                      child: Row(            //Row to contained elements side by side
-                        children: [
-                          //icon
-                          Padding(
-                            padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-                            child: Icon(
-                              Icons.help_outline_rounded,
-                              size: 30,
-                              color: AppColors.blueColor,
+                  MaterialButton(
+                    onPressed: (){},
+                    child: Container(       //container to give it hight and color
+                      height: 50,
+                      color: AppColors.whiteColor,
+                      child: SizedBox(         //sizedbox for containing Row
+                        child: Row(            //Row to contained elements side by side
+                          children: [
+                            //icon
+                            Padding(
+                              padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+                              child: Icon(
+                                Icons.help_outline_rounded,
+                                size: 30,
+                                color: AppColors.blueColor,
+                              ),
                             ),
-                          ),
-                          Text(
-                            'Help and Feedback',
-                            style: TextStyle(
-                              fontSize: 16.0,
-                              fontWeight: FontWeight.bold,
-                              color: AppColors.blackColor,
-                            ),
-                          )
-                          
-                        ],
+                            Text(
+                              'Help and Feedback',
+                              style: TextStyle(
+                                fontSize: 16.0,
+                                fontWeight: FontWeight.bold,
+                                color: AppColors.blackColor,
+                              ),
+                            )
+                            
+                          ],
+                        ),
                       ),
                     ),
                   ),
