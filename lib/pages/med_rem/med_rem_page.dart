@@ -5,8 +5,7 @@ import 'package:medifys_app/assets/colors/colors.dart';
 import 'package:medifys_app/pages/doc_rec/doc_rec_page.dart';
 import 'package:medifys_app/pages/gemini_chatbot/gemini_bot.dart';
 import 'package:medifys_app/pages/shop/shop_page.dart';
-import 'package:medifys_app/pages/med_rem/med_tile.dart';
-
+import 'package:medifys_app/pages/med_rem/med_page_util/add_tile_dialog.dart';
 
 class MedRemPage extends StatefulWidget {
   const MedRemPage({super.key});
@@ -16,6 +15,8 @@ class MedRemPage extends StatefulWidget {
 }
 
 class _MedRemState extends State<MedRemPage> {
+
+  
 
   //method to update the selected index
   void _navigateBottomBar(int index) {
@@ -54,11 +55,11 @@ class _MedRemState extends State<MedRemPage> {
   //delete task
  List<String> tileData = ['Med1', 'Med2', 'Med3'];
 
-  void addTile() {
-    setState(() {
-      tileData.add('New Med ${tileData.length + 1}');
-    });
-  }
+  // void addTile() {
+  //   setState(() {
+  //     tileData.add('New Med ${tileData.length + 1}');
+  //   });
+  // }
 
   //------------------------------------------------------------------------------------------------------------------------
 
@@ -71,6 +72,7 @@ class _MedRemState extends State<MedRemPage> {
 
     body: Column(
         children: [
+
           Expanded(
             child: GridView.builder(
               itemCount: tileData.length,
@@ -110,7 +112,13 @@ class _MedRemState extends State<MedRemPage> {
     
 
           floatingActionButton:FloatingActionButton(
-            onPressed: addTile,
+            onPressed: () {
+              // Show the AddTile Dialog
+                showDialog(
+                  context: context,
+                  builder: (context) => AddTile(),
+                );
+              },
             backgroundColor: AppColors.blueColor,
             child: Icon(
               Icons.add_rounded,
