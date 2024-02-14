@@ -30,18 +30,18 @@ class _MedRemState extends State<DocRecPage> {
 //   });
 // }
 
-  var image;
-  List imageArray = [];
+  // var image;
+  // List imageArray = [];
 
-  Future<void> _openGallery() async {
-    final pickedImage = await ImagePicker().pickImage(source: ImageSource.camera);
-    if (pickedImage != null) {
-      setState(() {
-        image = pickedImage;
-        imageArray.add(image);
-      });
-    }
-  }
+  // Future<void> _openGallery() async {
+  //   final pickedImage = await ImagePicker().pickImage(source: ImageSource.camera);
+  //   if (pickedImage != null) {
+  //     setState(() {
+  //       image = pickedImage;
+  //       imageArray.add(image);
+  //     });
+  //   }
+  // }
 
 //------------------------------------------------------------------------------------------------------------------------
 
@@ -50,49 +50,53 @@ class _MedRemState extends State<DocRecPage> {
     return  Scaffold(
       backgroundColor: AppColors.whiteColor,
 
-      body: Container(
-        child: Column(
-          children: <Widget>[
-            Container(
-              child: Center(
-                child: FloatingActionButton(
-                  onPressed: (){
-                    _openGallery();
-                  },
-                  backgroundColor: AppColors.blueColor,
-                  child: Container(
-                    child: Icon(
-                      Icons.add,
-                      color: AppColors.whiteColor,
-                    ),
-                  ),
-                ),
-              ),
-            ),
+      // body: Container(
+      //   child: Column(
+      //     children: <Widget>[
+      //       Container(
+      //         child: Center(
+      //           child: FloatingActionButton(
+      //             onPressed: (){
+      //               _openGallery();
+      //             },
+      //             backgroundColor: AppColors.blueColor,
+      //             child: Container(
+      //               child: Icon(
+      //                 Icons.add,
+      //                 color: AppColors.whiteColor,
+      //               ),
+      //             ),
+      //           ),
+      //         ),
+      //       ),
             
-            Container(
-              child: imageArray.isEmpty ? Center(child: DocBlank()) : GridView.count(crossAxisCount: 3)
-            )
-          ],
+      //       Container(
+      //         child: imageArray.isEmpty ? Center(child: DocBlank()) : GridView.count(crossAxisCount: 3)
+      //       )
+      //     ],
           
-        ),
+      //   ),
+      // ),
+      
+
+      body:Container(
+        child: DocBlank()
       ),
 
-
-      // floatingActionButton:FloatingActionButton(
-      //   onPressed: () {
-      //     // Show the AddTile Dialog
-      //     showDialog(
-      //       context: context,
-      //       builder: (context) => AddDoc(),
-      //     );
-      //   },
-      //   backgroundColor: AppColors.blueColor,
-      //   child: Icon(
-      //     Icons.add_rounded,
-      //     color: AppColors.whiteColor,
-      //    ),
-      // ),
+      floatingActionButton:FloatingActionButton(
+        onPressed: () {
+          // Show the AddTile Dialog
+          showDialog(
+            context: context,
+            builder: (context) => AddDoc(),
+          );
+        },
+        backgroundColor: AppColors.blueColor,
+        child: Icon(
+          Icons.add_rounded,
+          color: AppColors.whiteColor,
+         ),
+      ),
     );
   }
 }

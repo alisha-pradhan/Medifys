@@ -1,5 +1,5 @@
 //This is the Profile button, which pops up a dialog box
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, sort_child_properties_last
 
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart'; // Import DateFormat from the intl package
@@ -14,14 +14,44 @@ class AddTile extends StatefulWidget{
 }
 
 class _AddTileState extends State<AddTile>{
-
+  
+  //controller
     final TextEditingController mfdController = TextEditingController();
     final TextEditingController expController = TextEditingController();
-
+  
+  //controller disposer
   @override
   void dispose() {
     mfdController.dispose();
     super.dispose();
+  }
+
+  //dropdown method
+    String? _dropdownValue; // Declare _dropdownValue as a nullable string
+  //set state, when new value selected
+  void dropdownCallback (String? selectedValue) {  //selectedValue is a nullable string ( '?' means selectedValue could be null)
+    if (selectedValue is String){
+      setState(() {
+        _dropdownValue = selectedValue;
+      });
+    }
+  }
+
+  //TIME 
+
+  //create TimeOfDay variable
+  TimeOfDay _timeOfDay = TimeOfDay(hour: 0, minute: 0);
+
+  //show time picker method
+  void _showTimePicker(){
+    showTimePicker(
+      context: context, 
+      initialTime: TimeOfDay.now(),
+    ).then((value){  //then value, user picks
+      setState(() {
+        _timeOfDay = value!;
+      });
+    }); 
   }
 
 
@@ -136,7 +166,7 @@ class _AddTileState extends State<AddTile>{
                   //exp date
                   Expanded(
                     child: TextField(
-                      controller: mfdController,
+                      controller: expController,
                       keyboardType: TextInputType.datetime,
                       onTap: () {
                         showDatePicker(
@@ -168,26 +198,30 @@ class _AddTileState extends State<AddTile>{
 
             //3rd Row -> Dropdown
             Padding(
-              padding: EdgeInsets.all(1),
-              child: Expanded(
-                child: Container(
-                  padding: EdgeInsets.all(5),
-                    // decoration: BoxDecoration(
-                    //   borderRadius: BorderRadius.circular(10.0),
-                    //   border: Border.all(
-                    //     color: AppColors.blueColor, style: BorderStyle.solid, width: 2),
-                    // ),
-                  child: DropdownMenu(
-                    label: const Text('Select the type of Medicine', style: TextStyle(color: AppColors.greyColor, fontWeight: FontWeight.w500),),
-                    width: 300,
-                    dropdownMenuEntries: <DropdownMenuEntry<Color>> [
-                      DropdownMenuEntry(value:Colors.blue.shade700, label:'Type 1'),
-                      DropdownMenuEntry(value:Colors.pink.shade700, label:'Type 2'),
-                      DropdownMenuEntry(value:Colors.green.shade700, label:'Type 3'),
-                      DropdownMenuEntry(value:Colors.orange.shade700, label:'Type 4'),
-                      DropdownMenuEntry(value:Colors.deepPurple.shade700, label:'Type 5'),
-                    ],
+              padding: EdgeInsets.fromLTRB(10,0,10,0),
+              child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10.0),
+                    border: Border.all(
+                      color: AppColors.blueColor, style: BorderStyle.solid, width:1.2 ),
                   ),
+                child: DropdownButton<String>( //set <String> explicitly else 'null' was not recognised
+                  padding:EdgeInsets.fromLTRB(10,2,10,0),
+                  items: const[
+                    DropdownMenuItem<String>(child: Text("Select the type of medicine", style:TextStyle(color:AppColors.greyColor)), value:null), //actually first value shall come, then child(by invocation order)
+                    DropdownMenuItem<String>(child: Text("type1"), value:"type1" ), //actually first value shall come, then child(by invocation order)
+                    DropdownMenuItem<String>(child: Text("type2"), value:"type2" ),
+                    DropdownMenuItem<String>(child: Text("type3"), value:"type3" ),
+                    DropdownMenuItem<String>(child: Text("type4"), value:"type4" ),
+                    DropdownMenuItem<String>(child: Text("type5"), value:"type5" ),
+                    DropdownMenuItem<String>(child: Text("type6"), value:"type6" ),
+                  ],
+                  value: _dropdownValue,
+                  onChanged:dropdownCallback,
+                  iconSize: 25, //arrow size
+                  iconEnabledColor: AppColors.greyColor,
+                  isExpanded: true, //fills the parent
+                  //if 'items' and 'onchanged' null, dropdown gets disabled
                 ),
               ),
             ),
@@ -217,20 +251,41 @@ class _AddTileState extends State<AddTile>{
 
                   //time
                   SizedBox(
-                    width: 50,
-                    child: Expanded(
-                      child: TextField(
-                        keyboardType: TextInputType.number,
-                         decoration: InputDecoration(
-                            enabledBorder: UnderlineInputBorder(
-                              borderSide: BorderSide(color: AppColors.blueColor)
+                    width: 120,
+                    child: Row(
+                      children: [
+
+                        //display time
+                        Text(
+                          _timeOfDay.format(context).toString(),
+                        ),
+
+                        //button
+                        Container(
+                          padding: EdgeInsets.only(left: 5),
+                          child: MaterialButton(
+                            color: AppColors.blueColor,
+                            onPressed:_showTimePicker,
+                            minWidth: 0,
+                            height: 32,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12), // Adjust the value to match the container's borderRadius
                             ),
-                            hintText: "Time",
-                            hintStyle: TextStyle(color: AppColors.greyColor), // Set the hint text color
-                            contentPadding: EdgeInsets.only(bottom: 2), // Adjust the bottom padding
+                            child: const Padding(
+                              padding: EdgeInsets.all(0),
+                              child: Text(
+                                'SET',
+                                style: TextStyle(
+                                  color: AppColors.whiteColor,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 12,
+                                ),
+                              ),
+                            ),
                           ),
                         ),
-                      ),
+                      ],
+                    ),
                   ),   
                 ]
               ),

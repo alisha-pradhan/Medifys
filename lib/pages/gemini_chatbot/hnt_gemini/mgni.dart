@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_2/hnt_gemini/gni.dart';
+import 'package:medifys_app/pages/gemini_chatbot/hnt_gemini/mgni.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 

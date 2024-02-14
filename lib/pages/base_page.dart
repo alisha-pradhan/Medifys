@@ -53,14 +53,14 @@ class _BaseState extends State<BasePage> {
         backgroundColor: AppColors.blueColor,
         title: Row(
           children: [
-            IconButton(
-              icon: Icon(Icons.home),
-              color:AppColors.whiteColor,
-                onPressed: () {
-                  // Redirect to Base
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => MedRemPage()));
-                },
-            ),
+            // IconButton(
+            //   icon: Icon(Icons.home),
+            //   color:AppColors.whiteColor,
+            //     onPressed: () {
+            //       // Redirect to Base
+            //       Navigator.push(context, MaterialPageRoute(builder: (context) => MedRemPage()));
+            //     },
+            // ),
             Text(
               'Medifys',
               style: TextStyle(

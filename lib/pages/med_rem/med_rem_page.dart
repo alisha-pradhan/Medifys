@@ -16,27 +16,7 @@ class MedRemPage extends StatefulWidget {
 
 class _MedRemState extends State<MedRemPage> {
 
-  
 
-  //method to update the selected index
-  void _navigateBottomBar(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
-
-  void createNewMed(){}
-
-  //this keeps track of the selected page index
-  int _selectedIndex =0;
-
-  //page list for navigating in Bottom Nav Bar
-  final List _pages= [
-    DocRecPage(),    //doc rec page
-    GeminiBotPage(),    //chatbot page
-    ShopPage(),    //shop page
-
-  ];
 
 //------------------------------------------------------------------------------------------------------------------------
 
