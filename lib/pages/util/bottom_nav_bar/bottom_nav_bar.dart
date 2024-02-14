@@ -8,8 +8,7 @@ class BottomNavBar extends StatefulWidget {
   final Function(int) onItemTap;
   final Color tabBarViewColor;
 
-  BottomNavBar({
-    Key? key,
+  const BottomNavBar({super.key,
     required this.selectedIndex,
     required this.onItemTap,
     required this.tabBarViewColor,
@@ -20,9 +19,9 @@ class BottomNavBar extends StatefulWidget {
 }
 
 class _BottomNavBarState extends State<BottomNavBar> {
-  final DocRecPage docRecPage = DocRecPage();
-  final GeminiBotPage geminiBotPage = GeminiBotPage();
-  final ShopPage shopPage = ShopPage();
+  final DocRecPage docRecPage = const DocRecPage();
+  final GeminiBotPage geminiBotPage = const GeminiBotPage();
+  final ShopPage shopPage = const ShopPage();
 
   @override
   Widget build(BuildContext context) {

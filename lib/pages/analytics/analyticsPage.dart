@@ -22,24 +22,24 @@ class AnalyticsPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue.shade700,
-        leading: BackButton(),
+        leading: const BackButton(),
       ),
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Container(
+            const SizedBox(
               height: 300,
               child: LineChartWidget(),
             ),
             Container(
               alignment: Alignment.centerLeft,
               height: 175,
-              child: CircularCHarts(),
+              child: const CircularCHarts(),
             ),
             Container(
               alignment: Alignment.centerLeft,
-              padding: EdgeInsets.only(left: 28),
+              padding: const EdgeInsets.only(left: 28),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -100,8 +100,8 @@ class LineChartWidget extends StatelessWidget {
             horizontalInterval: 1.0, // Customize the interval as needed
             drawVerticalLine: false,
             getDrawingHorizontalLine: (value) {
-              return FlLine(
-                color: const Color(0xff37434d),
+              return const FlLine(
+                color: Color(0xff37434d),
                 strokeWidth: 1,
               );
             },
@@ -119,34 +119,34 @@ class LineChartWidget extends StatelessWidget {
           lineBarsData: [
             LineChartBarData(
               spots: [
-                FlSpot(0, 3),
-                FlSpot(1, 1),
-                FlSpot(2, 4),
-                FlSpot(3, 2),
-                FlSpot(4, 5),
-                FlSpot(5, 4),
-                FlSpot(6, 6),
+                const FlSpot(0, 3),
+                const FlSpot(1, 1),
+                const FlSpot(2, 4),
+                const FlSpot(3, 2),
+                const FlSpot(4, 5),
+                const FlSpot(5, 4),
+                const FlSpot(6, 6),
               ],
               isCurved: false,
               color: Colors.blue,
-              dotData: FlDotData(show: true),
+              dotData: const FlDotData(show: true),
               belowBarData: BarAreaData(show: false),
               show: true,
             ),
             LineChartBarData(
               spots: [
-                FlSpot(0, 1),
-                FlSpot(1, 2),
-                FlSpot(2, 4),
-                FlSpot(3, 3),
-                FlSpot(4, 2),
-                FlSpot(5, 5),
-                FlSpot(6, 3),
+                const FlSpot(0, 1),
+                const FlSpot(1, 2),
+                const FlSpot(2, 4),
+                const FlSpot(3, 3),
+                const FlSpot(4, 2),
+                const FlSpot(5, 5),
+                const FlSpot(6, 3),
               ],
               isCurved: false,
               color: Colors.red,
               // colors: [Colors.red],
-              dotData: FlDotData(show: true),
+              dotData: const FlDotData(show: true),
               show: true,
               belowBarData: BarAreaData(show: false),
             ),
@@ -169,19 +169,19 @@ class CircularCHarts extends StatefulWidget {
 class _CircularCHartsState extends State<CircularCHarts> {
   List chartData = [
     [40, 'bpm', Colors.blueAccent[700]],
-    [40, 'sleep', Color.fromARGB(249, 36, 88, 230)],
-    [40, 'steps', Color.fromARGB(255, 41, 98, 255)],
-    [40, 'hearts', Color.fromARGB(253, 30, 73, 190)],
-    [40, 'weight', Color.fromARGB(252, 19, 73, 221)],
-    [40, 'calorie', Color.fromARGB(251, 17, 57, 167)],
-    [40, 'power', Color.fromARGB(250, 58, 104, 231)],
+    [40, 'sleep', const Color.fromARGB(249, 36, 88, 230)],
+    [40, 'steps', const Color.fromARGB(255, 41, 98, 255)],
+    [40, 'hearts', const Color.fromARGB(253, 30, 73, 190)],
+    [40, 'weight', const Color.fromARGB(252, 19, 73, 221)],
+    [40, 'calorie', const Color.fromARGB(251, 17, 57, 167)],
+    [40, 'power', const Color.fromARGB(250, 58, 104, 231)],
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SfCircularChart(
-        margin: EdgeInsets.all(0),
+        margin: const EdgeInsets.all(0),
         series: [
           DoughnutSeries(
             dataSource: chartData,
@@ -191,8 +191,8 @@ class _CircularCHartsState extends State<CircularCHarts> {
             innerRadius: '40%',
             explode: true,
             pointColorMapper: (data, _) => data[2],
-            dataLabelMapper: (data, _) => data[0].toString() + ' K',
-            dataLabelSettings: DataLabelSettings(
+            dataLabelMapper: (data, _) => '${data[0]} K',
+            dataLabelSettings: const DataLabelSettings(
                 isVisible: true,
                 textStyle: TextStyle(
                   fontSize: 14,
@@ -201,7 +201,7 @@ class _CircularCHartsState extends State<CircularCHarts> {
                 labelPosition: ChartDataLabelPosition.inside),
           )
         ],
-        legend: Legend(
+        legend: const Legend(
           isVisible: true,
           position: LegendPosition.right,
           orientation: LegendItemOrientation.vertical,

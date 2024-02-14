@@ -5,10 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:medifys_app/assets/colors/colors.dart';
 import 'package:medifys_app/pages/analytics/analyticsPage.dart';
 import 'package:medifys_app/pages/settings/settings.dart';
-import 'package:popover/popover.dart';
 import 'package:medifys_app/pages/util/profile_dialogue/popover_button.dart';
-import 'package:medifys_app/pages/settings/settings.dart';
-import 'package:medifys_app/pages/analytics/analyticsPage.dart';
 
 
 class ProfileDialog extends StatelessWidget{

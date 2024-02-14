@@ -2,9 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:medifys_app/assets/colors/colors.dart';
-import 'package:medifys_app/pages/doc_rec/doc_rec_page.dart';
-import 'package:medifys_app/pages/gemini_chatbot/gemini_bot.dart';
-import 'package:medifys_app/pages/shop/shop_page.dart';
 import 'package:medifys_app/pages/med_rem/med_page_util/add_tile_dialog.dart';
 
 class MedRemPage extends StatefulWidget {

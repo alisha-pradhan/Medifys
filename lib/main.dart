@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
     
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: BasePage(), //redirects to MedRemPage
+      home: const BasePage(), //redirects to MedRemPage
       theme: ThemeData(
         fontFamily: GoogleFonts.dmSans().fontFamily,
       ),

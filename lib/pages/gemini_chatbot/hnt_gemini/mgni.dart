@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medifys_app/pages/gemini_chatbot/hnt_gemini/mgni.dart'; //only import updated
+//only import updated
 import 'package:get/get.dart'; //dependency added
 import 'package:image_picker/image_picker.dart';
 
@@ -48,7 +48,7 @@ class HomePage extends StatelessWidget {
               onPressed: () {
                 ImagePicker();
               },
-              icon: Icon(Icons.camera_alt_outlined),
+              icon: const Icon(Icons.camera_alt_outlined),
             ),
             suffixIcon: IconButton(
               onPressed: () async {

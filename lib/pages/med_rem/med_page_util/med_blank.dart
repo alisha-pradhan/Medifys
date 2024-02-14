@@ -10,7 +10,7 @@ class MedBlank extends StatelessWidget{
   Widget build(BuildContext context){
     return Padding(
       padding: EdgeInsets.all(60),
-      child: Container(
+      child: SizedBox(
         height: 400,
         child: Center(
           child: Text(

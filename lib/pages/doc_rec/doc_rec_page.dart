@@ -1,11 +1,9 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, sort_child_properties_last
 
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:medifys_app/assets/colors/colors.dart';
 import 'package:medifys_app/pages/doc_rec/doc_util/add_doc.dart';
 import 'package:medifys_app/pages/doc_rec/doc_util/doc_blank.dart';
-import 'package:image_picker/image_picker.dart';
 
 class DocRecPage extends StatefulWidget {
   const DocRecPage({super.key});

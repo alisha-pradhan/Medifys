@@ -13,7 +13,7 @@ class PopoverBtn extends StatelessWidget{
     // onTap:() => showPopover(context: context, bodyBuilder: bodyBuilder),  // replacing bodybuilder
     onTap:() => showPopover(
       context: context, 
-      bodyBuilder: (context) => PopMenuItems(),      //context points to menu_items.dart
+      bodyBuilder: (context) => const PopMenuItems(),      //context points to menu_items.dart
       width: 250,
       height:150,
       backgroundColor: Colors.deepPurple.shade300,

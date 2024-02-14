@@ -15,6 +15,8 @@ import 'package:flutter/material.dart';
 // }
 
 class SettingsPage extends StatefulWidget {
+  const SettingsPage({super.key});
+
   @override
   _SettingsPageState createState() => _SettingsPageState();
 }
@@ -44,19 +46,19 @@ class _SettingsPageState extends State<SettingsPage> {
             )),
       ),
       body: ListView(
-        padding: EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(10.0),
         children: [
           ListTile(
-            title: Text('General Settings'),
-            leading: Icon(Icons.settings),
+            title: const Text('General Settings'),
+            leading: const Icon(Icons.settings),
             onTap: () {
               // Navigate to general settings page
             },
           ),
-          Divider(),
+          const Divider(),
           ListTile(
-            title: Text('Notifications'),
-            leading: Icon(Icons.notifications),
+            title: const Text('Notifications'),
+            leading: const Icon(Icons.notifications),
             trailing: Switch(
               value: enableNotifications,
               onChanged: (value) {
@@ -66,10 +68,10 @@ class _SettingsPageState extends State<SettingsPage> {
               },
             ),
           ),
-          Divider(),
+          const Divider(),
           ListTile(
-            title: Text('Dark Mode'),
-            leading: Icon(Icons.brightness_4),
+            title: const Text('Dark Mode'),
+            leading: const Icon(Icons.brightness_4),
             trailing: Switch(
               value: darkMode,
               onChanged: (value) {
@@ -79,41 +81,41 @@ class _SettingsPageState extends State<SettingsPage> {
               },
             ),
           ),
-          Divider(),
+          const Divider(),
           ListTile(
-            title: Text('Appearance'),
-            leading: Icon(Icons.palette),
+            title: const Text('Appearance'),
+            leading: const Icon(Icons.palette),
             onTap: () {
               // Navigate to appearance settings page
             },
           ),
-          Divider(),
+          const Divider(),
           ListTile(
-            title: Text('Accessibility'),
-            leading: Icon(Icons.accessibility),
+            title: const Text('Accessibility'),
+            leading: const Icon(Icons.accessibility),
             onTap: () {
               // Navigate to accessibilty
             },
           ),
-          Divider(),
+          const Divider(),
           ListTile(
-            title: Text('About'),
-            leading: Icon(Icons.info),
+            title: const Text('About'),
+            leading: const Icon(Icons.info),
             onTap: () {
               // Navigate to about page
             },
           ),
-          Divider(),
+          const Divider(),
           buildAccOption(context, "Social"),
           buildAccOption(context, "Language"),
           buildAccOption(context, "Privacy and Security"),
-          Divider(),
+          const Divider(),
           ListTile(
             iconColor: Colors.blue,
             autofocus: true,
-            contentPadding: EdgeInsets.only(left: 40),
-            title: Text('Support'),
-            leading: Icon(Icons.support_agent_sharp),
+            contentPadding: const EdgeInsets.only(left: 40),
+            title: const Text('Support'),
+            leading: const Icon(Icons.support_agent_sharp),
             onTap: () {
               // Navigate to about page
             },
@@ -121,10 +123,10 @@ class _SettingsPageState extends State<SettingsPage> {
           ListTile(
             iconColor: Colors.grey[500],
             autofocus: true,
-            contentPadding: EdgeInsets.only(left: 40),
+            contentPadding: const EdgeInsets.only(left: 40),
             title: const Text('Help and Feedback',
                 style: TextStyle(fontWeight: FontWeight.w600)),
-            leading: Icon(Icons.help_outline_rounded),
+            leading: const Icon(Icons.help_outline_rounded),
             onTap: () {
               // Navigate to about page
             },
@@ -196,7 +198,7 @@ GestureDetector buildAccOption(BuildContext context, String title) {
                   onPressed: () {
                     Navigator.of(context).pop();
                   },
-                  child: Text('Click'))
+                  child: const Text('Click'))
             ],
           );
         },
