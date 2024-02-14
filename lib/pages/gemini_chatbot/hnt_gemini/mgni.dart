@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:medifys_app/pages/gemini_chatbot/hnt_gemini/mgni.dart';
-import 'package:get/get.dart';
+import 'package:medifys_app/pages/gemini_chatbot/hnt_gemini/mgni.dart'; //only import updated
+import 'package:get/get.dart'; //dependency added
 import 'package:image_picker/image_picker.dart';
 
 class HomePage extends StatelessWidget {
