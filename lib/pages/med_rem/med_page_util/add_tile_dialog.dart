@@ -177,7 +177,7 @@ class _AddTileState extends State<AddTile>{
                         ).then((selectedDate) {
                           if (selectedDate != null) {
                             setState(() {
-                                mfdController.text = DateFormat.yMd().format(selectedDate);
+                                expController.text = DateFormat.yMd().format(selectedDate);
                             });
                           }
                         });
