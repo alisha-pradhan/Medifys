@@ -8,7 +8,7 @@ class ChatManager {
   final user = const types.User(
     id: 'user',
   );
-  final bot = const types.User(id: 'model', firstName: 'Gemin');
+  final bot = const types.User(id: 'model', firstName: 'Gemini');
   bool isLoading = false;
   late WebSocketChannel channel;
 

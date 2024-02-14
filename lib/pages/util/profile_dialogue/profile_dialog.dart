@@ -18,10 +18,10 @@ class ProfileDialog extends StatelessWidget{
   Widget build(BuildContext context){
     return Dialog(
       child: Container(
-        height: 350,
+        height: 310,
         decoration: BoxDecoration(
           color: AppColors.whiteColor,
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(36),
         ),
         child: Column(        //column is the child of container
           mainAxisSize: MainAxisSize.min,

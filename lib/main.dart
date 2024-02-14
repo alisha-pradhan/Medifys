@@ -3,6 +3,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:medifys_app/pages/base_page.dart';
+import 'package:google_fonts/google_fonts.dart';
+
 
 void main(){
   runApp(const MyApp());
@@ -17,6 +19,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: BasePage(), //redirects to MedRemPage
+      theme: ThemeData(
+        fontFamily: GoogleFonts.dmSans().fontFamily,
+      ),
     );
   }
 }

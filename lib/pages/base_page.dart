@@ -7,11 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:medifys_app/assets/colors/colors.dart';
 import 'package:medifys_app/pages/med_rem/med_rem_page.dart';
 import 'package:medifys_app/pages/doc_rec/doc_rec_page.dart';
-import 'package:medifys_app/pages/gemini_chatbot/gemini_bot.dart';
 import 'package:medifys_app/pages/util/profile_dialogue/profile_dialog.dart';
 import 'package:medifys_app/pages/shop/shop_page.dart';
-import 'package:medifys_app/pages/analytics/analyticsPage.dart';
-import 'package:medifys_app/pages/settings/settings.dart';
 import 'package:medifys_app/pages/gemini_chatbot/geminI/chat_page.dart';
 
 
@@ -41,7 +38,7 @@ class _BaseState extends State<BasePage> {
     MedRemPage(),   //med rem page
     DocRecPage(),    //doc rec page
     ChatPage(),    //chatbot page
-    SettingsPage(),    //shop page
+    ShopPage(),    //shop page
 
   ];
 
