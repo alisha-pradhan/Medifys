@@ -30,10 +30,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  image_picker: ^1.0.7
-  dotted_border: ^2.1.0   #for dotted borders
-  google_fonts: ^6.1.0
-  get: ^4.6.6 #for chatbot
+
 
 
 
@@ -46,7 +43,12 @@ dependencies:
   fl_chart: ^0.66.1
   syncfusion_flutter_charts: ^24.2.4+2
   collection: ^1.18.0
+  image_picker: ^1.0.7
+  dotted_border: ^2.1.0   #for dotted borders
+  google_fonts: ^6.1.0
+  get: ^4.6.6 #for chatbot
 
+  
   flutter_chat_types: ^3.6.2
   flutter_chat_ui:
 
@@ -61,6 +63,15 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   popover: ^0.3.0  #for popover in dialog box
+  flutter_launcher_icons: "^0.13.1"
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "lib/assets/images/medifys_logo1.png"
+  adaptive_icon_foreground: "lib/assets/images/medifys_logo2.png"
+  adaptive_icon_background: "#ffffff"
+
 
 
   # The "flutter_lints" package below contains a set of recommended lints to

@@ -30,10 +30,10 @@ class _AddDocState extends State<AddDoc>{
     return Dialog(
       child: Container(
         padding: EdgeInsets.fromLTRB(0, 5, 0, 0),
-        height: 370,
+        height: 400,
         decoration: BoxDecoration(
           color: AppColors.whiteColor,
-          borderRadius: BorderRadius.circular(32),
+          borderRadius: BorderRadius.circular(25),
         ),
 
         child: Column(        //column is the child of container
